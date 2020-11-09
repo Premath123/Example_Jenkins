@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+
+  <div class="w3-container w3-xlarge">
+    
+    <h3>ADIDAS</h3>
+    <table class="w3-table-all w3-card-4  w3-panel ">
+      
+      <thead>
+
+  
+<tr class="w3-black w3-large">
+    <th>Customer:{{buydel.firstName}}</th>
+    <th>Loyalty Points in Wallet:{{buydel.points}}</th>
+    <th></th>
+    <th></th>
+  </tr>
+    <tr class="w3-sand w3-large">
+      <th>Product Code</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Select Product</th>
+    </tr>
+    <tr *ngFor="let item of productdel" class="w3-pale-red w3-large">
+      <td>{{item.productID}}</td>
+      <td>{{item.productDesc}}</td>
+      <td>{{item.unitPrice}}</td>  
+      <td><button (click)="onUpdate(item.productID,item.unitPrice)" class="w3-black">Select</button> </td>
+    </tr></thead>
+    </table>
+    
+      <tr class="w3-pale-blue w3-xlarge">
+        <td>Bill Ammount:{{total}}</td>
+      </tr>
+      <tr class="w3-pale-blue w3-xlarge">     
+      
+        <td>Redeem AVON Points:<input type="number" min="0" [(ngModel)]="name" /> <span class="w3-bar-item w3-center"><button (click)="selectProduct(name)"  class="w3-button w3-tiny w3-teal w3-border w3-border-black w3-animate-zoom w3-round-large"><i
+          class="fa "></i> Submit </button></span></td>
+        
+    </tr>
+
+  </div>
+
+</body>
+
+</html>

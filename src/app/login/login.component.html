@@ -1,0 +1,42 @@
+<div class="Absolute-Center">
+  <div class="col-md-15 login-center" style="background-color:rgb(244, 248, 250)">
+    <h1>Select Role and signIn</h1>
+    <div class="log-img"> <img src="./assets/11.png" alt=" "></div>
+  
+  <form [formGroup]="loginForm" role="form">
+     
+    <div class="form-group">
+        <label>Roles</label>
+        <select class=" form-control " formControlName="role" placeholder="Select role ">
+          <option value="null" disabled>Select Role</option>
+          <option *ngFor="let role of roles" [value]="role.id">{{role.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Username</label>
+        <div class="input-icon input-icon-sm ">
+         
+          <input  type="text" autocomplete="off" class="form-control" formControlName="username" [(ngModel)]="username" placeholder="User Name">
+        </div>
+        
+       
+
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-icon input-icon-sm ">
+         
+          <input  type="text" autocomplete="off" class="form-control" formControlName="password" [(ngModel)]="password" placeholder="Password">
+        </div>
+        
+
+      </div>
+      
+      <button type="submit"class="btn btn-success"  (click)="signIn()">Login</button>
+      <!-- <nav>
+        <a routerLink="../register" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>Signup</a>
+      </nav>-->
+    </form>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+
+  <div class="w3-container w3-xlarge">
+    <h2>ORDER SUMMARY</h2>
+
+
+    <table class="w3-table-all w3-card-4 w3-border w3-border-black w3-panel w3-border-round">
+      <thead>
+        <tr class="w3-sand w3-large">
+          <th>Order Value:{{billamt}}</th>
+          <td></td>
+        </tr>
+       
+      <tr class="w3-sand w3-large">
+
+  <th>Points Redeemed</th>
+  <td>
+    <input type="number" min="0" [(ngModel)]="item" />
+    
+      <span style="text-align:right" class="w3-bar-item w3-center"  ><button (click)=checkoutbill(item)
+          class="w3-button w3-teal w3-small w3-border w3-border-black w3-animate-zoom w3-round-large"><i class="fa "></i>
+          SUBMIT</button></span>
+    
+    
+  </td>
+</tr>
+</thead>
+
+    </table>
+  
+ 
+  </div>
+</body>
+
+</html>

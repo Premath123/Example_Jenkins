@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+
+  <div class="w3-container w3-xlarge">
+    <h2>AVON</h2>
+   
+
+    <table class="w3-table-all w3-card-4 w3-border w3-border-black w3-panel w3-border-round">
+      <thead>
+        <tr class="w3-black w3-large">
+          <th>BUYER:{{buyerDetails.firstName + " " + buyerDetails.lastName}}</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+    <tr class="w3-sand w3-large">
+      <th>Item description</th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Sub total</th>
+      <th>Loyalty Points</th>
+    </tr>
+   </thead>
+   
+      <tr *ngFor="let item of items" class="w3-pale-red w3-large" >
+        <td>{{item.itemDescription}}</td>
+        <td>{{item.unitPrice}}</td>
+        <td>
+          <input type="number" min="0" [(ngModel)]="item.qty" />
+        </td>
+        <td>
+          {{item.unitPrice * item.qty }}
+          <div>
+            <button title="Add To Cart" (click)="addToCart(item,item.unitPrice * item.qty)"
+              class="w3-button w3-tiny w3-black w3-border w3-border-black w3-animate-zoom w3-round-large">
+              <i class="fa fa-external-link"></i>ADD
+            </button>
+          </div>
+        </td>
+        <td>{{item.points}}</td>
+      </tr>
+        <tr>
+          <td></td>
+          <td>
+          </td>
+          <td></td>
+          <td>Total: {{total}}</td>
+          <td></td>
+        </tr>
+       
+    </table>
+  </div>
+    <div style="text-align:right">
+      <span class="w3-bar-item w3-center"><button routerLink="/checkout"
+          class="w3-button w3-teal w3-large w3-border w3-border-black w3-animate-zoom w3-round-large"><i class="fa "></i>
+          Check out</button></span>
+    
+    </div>
+    </body>
+    
+    </html>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

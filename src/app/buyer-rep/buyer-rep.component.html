@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 50%;
+
+    }
+
+    td,
+    th {
+      border: 1px solid #043857;
+      text-align: left;
+      padding: 5px;
+      height: 50px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #c9ebf5;
+      height: 50px;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    tr:hover {
+      background-color: #f1a3a3;
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+
+    a:hover {
+      background-color: rgb(81, 240, 88);
+      color: black;
+    }
+
+    .next {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>GIFT LOYALTY POINTS</h2>
+  <table border="0" style="width:100%" cellpadding="25" cellspacing="50">
+    <tr>
+      <th>Customer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>Txn Date</th>
+      <th>products </th>
+      <th>Amount</th>
+      <th>Points Redeemed</th>
+    </tr>
+
+    <tr *ngFor="let item of dataa">
+      <td>{{item.TxnDate}} </td>
+      <td>{{item.Products}} </td>
+      <td>{{item.Amount}}</td>
+      <td>{{item.PointsRedeemed}}<a href="#" class="next">&raquo;</a> </td>
+
+    </tr>
+
+  </table>
+  <div style="text-align:right">
+    <span class="w3-bar-item w3-center"><button routerLink="/dashboard" class="w3-button w3-small w3-yellow w3-border w3-border-black w3-animate-zoom w3-round-large"><i
+          class="fa ">Close</i></button></span>
+  </div>
+
+</body>
+
+</html>
